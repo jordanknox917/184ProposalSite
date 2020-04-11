@@ -11,7 +11,7 @@
 <body>
   <div class="header-container">
     <div class="container">
-      <h1 class="header">Final Project:<br />VR Quarantine Lectures</h1>
+      <h1 class="header">Final Project:<br />Point Cloud to Mesh</h1>
       <hr />
       <h3 class="header">Jordan Knox &amp; Mickey Matiss &amp; Brian Fu</h3>
     </div>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="body-section">
-        <p>Our team consists of Jordan Knox, Mickey Matiss, and Brian Fu. We plan to create a VR application that allows for users to view and attend their zoom lectures in virtual reality. This would make the zoom lectures much closer to the regular lectures for those who prefer in person lectures to webcasts.</p>
+        <p>Our team consists of Jordan Knox, Mickey Matiss, and Brian Fu. We plan to create a point cloud to mesh converter. The point cloud to mesh renderer will take as input a point cloud, and output a mesh that can be easily rendered to accurately represent the subject of the original point mesh.</p>
       </div>
     </div>
     <div class="body-row container">
@@ -34,9 +34,10 @@
         </div>
       </div>
       <div class="body-section">
-        <p>There is obviously something to be said of in person instruction over online instruction. Even for large lectures that do not guarantee interaction between every student and the professor. If there were none, then by now, most schools would have already been online schools. Given our current situation many, if not all,
-            schools and classes have been forced online only. We would like to provide a solution for making online lectures more similar to real in person lectures. Our plan, is to create a virtual lecture hall, in which the recording of the professor instructing is actually onstage, their slides are actually displayed, and other students in teh lecture will be projeted beside you.
-             This will give those who prefer in person lecture a much more realistic learning experience, and will hopefully help to alleviate some of the stress we are all dealing with.
+        <p>
+            At this point in class, we have rendered many different materials, objects, and scenes, from a lot of different sources to render off of. We have not yet rendered objects using point clouds. Point clouds are very easy
+            ways to measure and represent 3D objects through data. In this project we are aiming to convert point clouds to a mesh representation so as to accurately render objects in the 3D space from point cloud data. The cloud data is typically obtained through 3D scanners. Once the point cloud is obtained, 
+            we can then represent the subject visually through a mesh. It will be challenging to accurately connect the points into vertices and deciding which algorithms and methods of reconstruction to use in order to render the correct final product.
         </p>
       </div>
     </div>
@@ -47,15 +48,15 @@
         </div>
       </div>
       <div class="body-section">
-        <p>Our main goal is to produce a virtual lecture hall in which students can experience their lectures.</p>
-        <p>Our hope is that we are able to get live zoom lectures represented in a virtual reality format. This would include a presenter (professor) being the focus and main stage. The presenter's materials (lecture slides) displayed similarly to real life. And other students and their audio around the student as it would be in a real lecture.</p>
-        <p>In order to deliver on our goals, we need to figure out a way to effectively stitch together the images from the zoom lectures and background imagery in order to create an accurate lecture hall. We also need to sort and position the audio sources so that they represent the environment we would like to create.</p>
-        <p>If we encounter problems with incorporating the other users who are not the focus (other students) we would transition into only representing the lecturer and their material in a virtual lecture hall. But if things went well, we would try to add the ability for the world to not only show audio of the other students, but make their video appear in a similar manner as the presenter.</p>
+        <p>Our main goal is to produce a renderer that can take in a point cloud and output a mesh that matches the subject of the point cloud.</p>
+        <p>We plan to deliver a renderer that can output a mesh from a point cloud. We plan to do so using the ball pivot algorithm.</p>
+        <p>Some issues we could encounter would be getting point clouds with enough points to create an accurate mesh representation. Another issue we could encounter would be not knowing where to continue the ball pit algorithm if we have completed filling in the pit.</p>
+        <p>Ideally, if we are ahead of schedule and have time, we would like to enable our renderer to create the mesh from a picture instead of specifically a point cloud. Which would require figuring out a way to calculate depth from pictures.</p>
         <div class="flex-row image-container">
           <div class="image-card">
-            <img src="https://cdn.androidheadlines.com/wp-content/uploads/2019/07/bigscreen-tv-vr-announcement.jpg" alt="">
+            <img src="https://doc.cgal.org/latest/Poisson_surface_reconstruction_3/introduction.jpg" alt="">
             <div class="image-caption">
-              <div class="caption-text">Example of a VR application based around watching TV in a similar manner as we aim to</div>
+              <div class="caption-text">Example of a mesh reconstruction from a point cloud</div>
             </div>
           </div>
         </div>
@@ -70,10 +71,10 @@
       <div class="body-section">
         <p>We have split the overall schedule into 4 sections. We have given each section about a week to complete:
           <ol>
-            <li>Split lectures into different video and audio files accordingly</li>
-            <li>Assemble VR environment without added lecture files</li>
-            <li>Stitch parsed lecture video files into VR environment</li>
-            <li>Position Audio sources in the VR environment</li>
+            <li>Convert point cloud into vertices</li>
+            <li>Calculating best circle size and where to start</li>
+            <li>Using ball pivot algorithm to recreate simple meshes</li>
+            <li>Using ball pivot algorithm to recreate more advanced meshes</li>
           </ol>
         </p>
       </div>
@@ -87,9 +88,9 @@
       <div class="body-section">
         <p>
           <ul>
-            <li><a href="https://www.cs.williams.edu/~morgan/cs371-f16/gallery/4-midterm/terrain/report.md.html">Stylized Terrain Generation</a></li>
-            <li><a href="http://stevelosh.com/blog/2016/02/midpoint-displacement/">Terrain Generation using midpoint displacement</a></li>
-            <li><a href="https://www.khronos.org/webgl/wiki/Main_Page">WebGL docs</a></li>
+            <li><a href="https://lidarwidgets.com/samples/bpa_tvcg.pdf">The Ball-Pivoting Algorithm
+            for Surface Reconstruction</a></li>
+            <li><a href="http://hhoppe.com/poissonrecon.pdf">Poisson Surface Reconstruction</a></li>
           </ul>
         </p>
       </div>
